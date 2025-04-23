@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome! | USTP Payroll Management System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-box">
+        <div class="logo-container">
+          <img src="./assets/logo.png" alt="USTP Logo" class="logo" />
+        </div>
+        <h1>Payroll Management System</h1>
+        <form id="loginForm">
+          <p class="login-subtitle">Login to Continue</p>
+
+          <label for="email" class="input-label"><em>Email Address</em></label>
+          <input type="email" id="email" placeholder="Email Address" required />
+
+          <label for="password" class="input-label"><em>Password</em></label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+
+          <button type="submit">LOGIN</button>
+        </form>
+
+        <p class="register-link">
+          Don't have an account?
+          <a href="register.html">Register Now</a>
+        </p>
+      </div>
+    </div>
+
+    <div id="popup" class="popup hidden">
+      <div class="popup-content">
+        <img id="popup-icon" class="popup-icon" src="" alt="Status Icon" />
+        <div class="popup-text">
+          <h2 id="popup-title">Success</h2>
+          <p id="popup-message">You will be redirected shortly...</p>
+          <button id="popup-button">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDRnBpfzuU_dnIwfmjogb6qTewbFcOo5DU",
+        authDomain: "authentication-de919.firebaseapp.com",
+        projectId: "authentication-de919",
+        storageBucket: "authentication-de919.appspot.com",
+        messagingSenderId: "368984103131",
+        appId: "1:368984103131:web:bb27de4fd19f55e68c54fe",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      const loginForm = document.getElementById("loginForm");
+      const popup = document.getElementById("popup");
+      const popupIcon = document.getElementById("popup-icon");
+      const popupTitle = document.getElementById("popup-title");
+      const popupMessage = document.getElementById("popup-message");
+      const popupButton = document.getElementById("popup-button");
+
+      function showPopup(title, message, type) {
+        popupTitle.textContent = title;
+        popupMessage.textContent = message;
+        popup.classList.remove("hidden");
+
+        const iconSrc =
+          type === "success" ? "./assets/ok.png" : "./assets/error.png";
+        popupIcon.src = iconSrc;
+
+        // Change title color based on success or error
+        if (type === "success") {
+          popupTitle.style.color = "#165C3C"; // Green for success
+        } else {
+          popupTitle.style.color = "#AC4C4E"; // Red for error
+        }
+      }
+
+      popupButton.addEventListener("click", () => {
+        popup.classList.add("hidden");
+      });
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            showPopup(
+              "Login Successful!",
+              "You will be redirected shortly...",
+              "success"
+            );
+            setTimeout(() => {
+              window.location.href = "dashboard.html";
+            }, 1500);
+          })
+          .catch((error) => {
+            if (error.code === "auth/user-not-found") {
+              showPopup(
+                "Email Not Found",
+                "The email address is not registered.",
+                "error"
+              );
+            } else {
+              showPopup(
+                "Error",
+                "Invalid email or password. If error persists, please contact support.",
+                "error"
+              );
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

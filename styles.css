@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: url("./assets/new.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  width: 100%; /* Ensures input and button align within the box */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-box {
+  background-color: rgba(0, 0, 50, 0.8);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  width: 300px; /* Keep width to ensure the form doesn't stretch */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  background-color: white; /* Set the background to white */
+  padding: 10px;
+  border-radius: 10px; /* Circular container */
+  width: 100px; /* Adjust the width of the container */
+  height: 100px; /* Adjust the height to make it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 100px; /* Adjust logo size to fit the circular container */
+  height: 100px; /* Adjust logo size to fit the circular container */
+}
+
+.login-box h1 {
+  font-family: "Times New Roman", Times, serif;
+  color: #fbb217;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.login-subtitle {
+  font-size: 16px;
+  font-weight: bold;
+
+  margin: -20px 0 15px 0; /* Tighter spacing */
+  color: white;
+}
+input[type="email"],
+input[type="password"],
+button[type="submit"] {
+  width: 100%;
+  max-width: 290px; /* Keep everything consistently sized */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box; /* Ensures padding doesn't break layout */
+}
+
+.input-label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  margin-left: 5px;
+}
+
+button[type="submit"] {
+  font-family: "Times New Roman", Times, serif;
+  width: 100%;
+  padding: 10px;
+  background-color: #5b79e4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px; /* Optional: slightly increase button text size */
+}
+
+button[type="submit"]:hover {
+  background-color: #3a5fd3;
+}
+
+.register-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #5b79e4;
+  text-decoration: underline;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  animation: slideUp 0.3s ease-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.popup-icon {
+  width: 100px;
+  height: 100px;
+  margin-left: 15px;
+  object-fit: contain;
+}
+
+.popup-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* center title, message, and button horizontally */
+  flex: 1;
+  text-align: center; /* center text inside the block */
+}
+
+.popup-text h2 {
+  font-size: 27px;
+  margin: 0;
+  color: #ac4c4e;
+}
+
+.popup-text p {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px auto 20px; /* Adjust margin for centering */
+  color: #555;
+  width: 90%; /* You can adjust this value to make it narrower or wider */
+  max-width: 400px; /* Optionally set a max width to keep it controlled */
+}
+
+#popup-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #5b79e4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#popup-button:hover {
+  background-color: #3a5fd3;
+}
+.icon {
+  font-size: 40px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.icon.success::before {
+  content: "✔";
+  color: green;
+}
+
+.icon.error::before {
+  content: "✖";
+  color: red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

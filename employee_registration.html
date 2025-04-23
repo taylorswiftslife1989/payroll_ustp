@@ -1,0 +1,427 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>PMS | Employee's Registration Profile</title>
+      <link rel="stylesheet" href="./employee_registration.css">
+    </head>
+    <body>
+
+      <div class="dashboard-title-bar">
+        <img
+          src="./assets/user.png"
+          alt="Dashboard Icon"
+          class="dashboard-icon"
+        />
+        <span class="dashboard-label">Employee's Registration Profile</span>
+      </div>
+            <!-- Right Side: Clock-->
+            <div class="right-widgets">
+              <!-- Clock Widget -->
+              <div class="clock-widget">
+                <canvas id="analogClock" width="100" height="100"></canvas>
+                <div id="digitalClock">12:00 AM</div>
+              </div>
+      
+
+            <div class="entry-container">
+              <!-- Instruction Image -->
+                <div class="instruction-image-container">
+                  <img src="./assets/instructions.png" alt="Instructions" class="instruction-image" />
+                </div>
+                <button class="employee-list-btn" onclick="goToEmployeeList()">
+                  <img src="./assets/user.png" alt="Employee List" />
+                  <span>Employee's List</span>
+                </button>
+
+                <script>
+                  function goToEmployeeList() {
+                    window.location.href = "employee_list.html";
+                  }
+                </script>
+
+        <div class="fixed-title">EMPLOYEE'S REGISTRATION FORM</div>
+
+        <div  id= "part1" class="entry-content">                    
+            <!-- Part 1 Form -->
+
+            <form class="employee-form" id="employeeForm" method="POST" action="register_employee.php" enctype="multipart/form-data">
+
+              <div class="form-row">
+                <label for="empID">Employee ID:</label>
+                <input type="text" id="empID" name="empID" />
+              </div>
+          
+              <div class="form-row">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" />
+              </div>
+
+              <div class="form-row">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" />
+              </div>
+          
+              <div class="form-row">
+                <label for="middleName">Middle Name:</label>
+                <input type="text" id="middleName" name="middleName" />
+              </div>
+
+              <div class="form-row">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                  <option value="">-- Select --</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="civilStatus">Civil Status:</label>
+                <select id="civilStatus" name="civilStatus">
+                  <option value="">-- Select --</option>
+                  <option value="single">Single</option>
+                  <option value="married">Married</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="age">Age:</label>
+                <select id="age" name="age">
+                  <option value="">-- Select --</option>
+                </select>
+              </div>
+
+              <script>
+                const ageSelect = document.getElementById('age');
+                for (let i = 16; i <= 100; i++) {
+                  const option = document.createElement('option');
+                  option.value = i;
+                  option.text = i;
+                  ageSelect.appendChild(option);
+                }
+              </script>
+          
+              <div class="form-row">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" />
+              </div>
+          
+              <div class="form-row">
+                <label for="contactNumber">Contact Number:</label>
+                <input type="text" id="contactNumber" name="contactNumber" />
+              </div>
+
+              <!-- Bottom buttons -->
+              <div class="form-actions">
+                <img src="./assets/clear.png" alt="Clear" class="action-button" onclick="showClearModal()"/>
+                <img src="./assets/next.png" alt="Next" class="action-button" onclick="goNextStep()" style="cursor: pointer;" />
+
+              </div>
+
+              
+          <script src="./get_image.js" type="module"></script>
+          </div>
+
+            <!-- Part 2 -->
+            <div class="form-part hidden employee-form2 entry-content2" id="part2">
+                <!-- form rows here -->
+                <div class="form-row2">
+                  <label for="dateHired">Date Hired:</label>
+                  <input type="date" id="dateHired" name="dateHired" />
+                </div>
+  
+                <div class="form-row2">
+                  <label for="jobPosition">Job Position:</label>
+                  <select id="jobPosition" name="jobPosition">
+                    <option value="">-- Select Job Position --</option>
+                    <option value="Department Head">Department Head</option>
+                    <option value="Program Chair">Program Chair</option>
+                    <option value="Instructor">Instructor</option> <!-- Unified -->
+                    <option value="Capstone Adviser">Capstone Adviser</option>
+                    <option value="Web Developer">Web Developer</option>
+                    <option value="System Analyst">System Analyst</option>
+                    <option value="Network Administrator">Network Administrator</option>
+                    <option value="Database Admin">Database Admin</option>
+                    <option value="IT Support Staff">IT Support Staff</option>
+                    <option value="Office Staff">Office Staff</option>
+                  </select>
+                </div>
+  
+                <div class="form-row2">
+                  <label for="department">Department:</label>
+                  <select id="department" name="department">
+                    <option value="">-- Select Department --</option>
+                    <option value="College of Information Technology and Computing">College of Information Technology and Computing</option>
+                    <option value="College of Engineering and Architecture">College of Engineering and Architecture</option>
+                    <option value="College of Science and Technology Education">College of Science and Technology Education</option>
+                    <option value="College of Technology">College of Technology</option>
+                    <option value="College of Science and Mathematics">College of Science and Mathematics</option>
+                    <option value="College of Medicine">College of Medicine</option>
+                    <option value="Senior High School">Senior High School</option>
+                  </select>
+                </div>
+                
+  
+                <div class="form-row2">
+                  <label for="tinNumber">TIN Number:</label>
+                  <input type="text" id="tinNumber" name="tinNumber" />
+                </div>
+  
+                <div class="form-row2">
+                  <label for="sssNumber">SSS Number:</label>
+                  <input type="text" id="sssNumber" name="sssNumber" />
+                </div>
+  
+                <div class="form-row2">
+                  <label for="philHealth">PhilHealth Number:</label>
+                  <input type="text" id="philHealth" name="philHealth" />
+                </div>
+  
+                <div class="form-row2">
+                  <label for="pagibig">Pag-IBIG Number:</label>
+                  <input type="text" id="pagibig" name="pagibig" />
+                </div>
+  
+                <div class="form-row2">
+                  <label for="ratePerHour">Rate Per Hour:</label>
+                  <input type="number" id="ratePerHour" name="ratePerHour" />
+                </div>
+  
+                <div class="form-row2">
+                  <label for="paymentMode">Mode of Payment:</label>
+                  <select id="paymentMode" name="paymentMode">
+                    <option value="">-- Select Payment Mode --</option>
+                    <option value="cash">Cash</option>
+                    <option value="creditCard">Credit Card</option>
+                    <option value="debitCard">Debit Card</option>
+                    <option value="gcash">GCash</option>
+                    <option value="bankTransfer">Bank Transfer</option>
+                  </select>
+                </div>
+                
+                <div class="form-row2">
+                  <label for="backupPayment">Backup Payment:</label>
+                  <select id="backupPayment" name="backupPayment">
+                    <option value="">-- Select Backup Payment --</option>
+                    <option value="cash">Cash</option>
+                    <option value="creditCard">Credit Card</option>
+                    <option value="debitCard">Debit Card</option>
+                    <option value="gcash">GCash</option>
+                    <option value="bankTransfer">Bank Transfer</option>
+                  </select>
+                </div>
+                <div class="form-actions2">
+                  <img src="./assets/clear.png" alt="Clear" class="action-button" onclick="showClearModal()" /></button>
+                  <img src="./assets/next.png" button class= "action-button2" type="button" onclick="goNextStep()"></button>
+                </div>
+
+            </div>
+
+            <!-- Part 3 -->
+              <div class="form-part hidden employee-form3 entry-content3" id="part3">
+                  <!-- Upload photo section -->
+                  <div class="photo-upload-section3">
+                    <input type="file" id="photoInput" name="photo" accept="image/*" style="display: none;" />
+                    <label for="photoInput">
+                      <img id="photoPreview" src="./assets/blank_photo.png" alt="Upload Photo" class="upload-photo-btn3" />
+                    </label>
+                    <div class="upload-instruction-text">
+                      Upload Employee’s Photo<br />
+                      <small>Max File Size 2MB</small>
+                    </div>
+                  </div>
+                  <!-- form rows here -->
+                  <div class="form-row3">
+                    <label for="emergencyNumber">Emergency Contact Number:</label>
+                    <input type="text" id="emergencyNumber" name="emergencyNumber" />
+                  </div>
+
+                  <div class="form-row3">
+                    <label for="emergencyName">Emergency Contact Name:</label>
+                    <input type="text" id="emergencyName" name="emergencyName" />
+                  </div>
+
+                  <div class="form-row3">
+                    <label for="relation">Relation to Employee:</label>
+                    <select id="relation" name="relation">
+                      <option value="">-- Select Relation --</option>
+                      <option value="parent">Parent</option>
+                      <option value="sibling">Sibling</option>
+                      <option value="spouse">Spouse</option>
+                      <option value="child">Child</option>
+                      <option value="relative">Relative</option>
+                      <option value="friend">Friend</option>
+                    </select>
+                  </div>
+
+                  <div class="form-actions3">
+                    <img src="./assets/clear.png" alt="Clear" class="action-button" onclick="showClearModal()" /></button>
+                    <img src="./assets/upload.png" class="action-button3" type="button" onclick="submitPart3()" style="cursor: pointer;">
+
+                  </div>
+              </div>
+            </form>
+          <script type="module" src="./next_field.js"></script>
+
+    </div>
+              <!-- Clear All Confirmation Modal -->
+              <div id="clearAllModal" class="modal">
+                <div class="modal-content">
+                  <img src="./assets/warn.png" class="modal-icon" alt="Warning Icon">
+                  <h2>Proceed to <span style="color: #FBB217;">Clear All?</span></h2>
+                  <p>This action cannot be undone.<br>You’ll need to fill everything again.</p>
+                  <div class="modal-buttons">
+                    <button class="yes-btn" onclick="confirmClearAll()">
+                      <img src="./assets/delete.png" alt="Yes Icon"> YES
+                    </button>
+                    <button class="no-btn" onclick="closeClearModal()">
+                      <img src="./assets/cancel.png" alt="No Icon"> NO
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Upload/Submit Confirmation Modal -->
+              <div id="submitModal" class="modal">
+                <div class="modal-content">
+                  <img src="./assets/warn.png" class="modal-icon" alt="Warning Icon">
+                  <h2>Do you want to <span style="color: #FBB217;">Register Employee?</span></h2>
+                  <p>This would register the Employee.<br>If you want changes, You’ll need to delete an Employee First <br> and fill everything again.</p>
+                  <div class="modal-buttons">
+                    <button class="yes-btn-submit" onclick="yesSubmitModal()">
+                      <img src="./assets/yes.png" alt="Yes Icon"> YES
+                    </button>
+                    <button class="no-btn-submit" onclick="closeSubmitModal()">
+                      <img src="./assets/cancel.png" alt="No Icon"> NO
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <script>
+                function yesSubmitModal() {
+                  document.getElementById("employeeForm").submit(); // Submit the form
+                }
+              </script>
+
+              <script>
+                function showClearModal() {
+                  document.getElementById("clearAllModal").style.display = "flex";
+                }
+              
+                function closeClearModal() {
+                  document.getElementById("clearAllModal").style.display = "none";
+                }
+              
+                function confirmClearAll() {
+                  location.reload(); // Or reset specific form fields if preferred
+                }
+              </script>
+              
+              <script>
+                function showSubmitModal() {
+                  document.getElementById("submitModal").style.display = "flex";
+                }
+              
+                function closeSubmitModal() {
+                  document.getElementById("submitModal").style.display = "none";
+                }
+              </script>
+
+              <!-- Required Fields Modal -->
+              <div id="requiredFieldsModal" class="modal">
+                <div class="modal-content">
+                  <img src="./assets/warn.png" class="modal-icon" alt="Warning Icon">
+                  <h2>Incomplete Fields</h2>
+                  <p>Please fill out all required fields before proceeding.</p>
+                  <div class="modal-buttons">
+                    <button class="no-btn" onclick="closeRequiredModal()">
+                      <img src="./assets/yes.png" alt="Cancel"> OK
+                    </button>
+                  </div>
+                </div>
+              </div>
+  
+    <div class="back-button-container" onclick="goBack()">
+      <img
+        src="./assets/backbutton.png"
+        alt="Back Button"
+        class="back-button"
+      />
+    </div>
+
+    
+    <script>
+      function goBack() {
+        window.location.href = "sys_task.html";
+      }
+    </script>
+    <!-- Firebase Auth & Firestore Script -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import {
+        getAuth,
+        signOut,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDRnBpfzuU_dnIwfmjogb6qTewbFcOo5DU",
+        authDomain: "authentication-de919.firebaseapp.com",
+        projectId: "authentication-de919",
+        storageBucket: "authentication-de919.appspot.com",
+        messagingSenderId: "368984103131",
+        appId: "1:368984103131:web:bb27de4fd19f55e68c54fe",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+
+      const nameDisplay = document.getElementById("userNameDisplay");
+      const logoutBtn = document.getElementById("logoutBtn");
+
+      onAuthStateChanged(auth, async (user) => {
+        if (!user) {
+          window.location.href = "index.html";
+          return;
+        }
+
+        try {
+          const userDoc = await getDoc(doc(db, "users", user.uid));
+          if (userDoc.exists()) {
+            const data = userDoc.data();
+            const fullName = `${data.firstName} ${data.lastName}`;
+            nameDisplay.textContent = fullName;
+          } else {
+            nameDisplay.textContent = "User Info Missing";
+          }
+        } catch (err) {
+          nameDisplay.textContent = "Error loading user data";
+        }
+      });
+
+      logoutBtn.addEventListener("click", () => {
+        signOut(auth).then(() => {
+          window.location.href = "index.html";
+        });
+      });
+    </script>
+    <!-- Clock & Calendar Scripts -->
+    <script type="module">
+      import { drawClock, updateDigitalClock } from "./clock.js";
+      window.onload = () => {
+        drawClock();
+        updateDigitalClock();
+      };
+    </script>
+    <div id="overlay" class="overlay hidden"></div>
+  </body>
+</html>
