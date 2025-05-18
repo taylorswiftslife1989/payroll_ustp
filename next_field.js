@@ -2,17 +2,29 @@ let currentStep = 1;
 
 function goNextStep() {
   const part1Fields = [
-    "empID", "firstName", "lastName", "middleName", "gender",
-    "civilStatus", "age", "email", "contactNumber"
+    "empID",
+    "firstName",
+    "lastName",
+    "middleName",
+    "gender",
+    "civilStatus",
+    "age",
+    "email",
+    "contactNumber",
   ];
   const part2Fields = [
-    "dateHired", "jobPosition", "department", "tinNumber",
-    "sssNumber", "philHealth", "pagibig", "ratePerHour",
-    "paymentMode", "backupPayment"
+    "dateHired",
+    "jobPosition",
+    "department",
+    "tinNumber",
+    "sssNumber",
+    "philHealth",
+    "pagibig",
+    "ratePerHour",
+    "paymentMode",
+    "backupPayment",
   ];
-  const part3Fields = [
-    "emergencyNumber", "emergencyName", "relation"
-  ];
+  const part3Fields = ["emergencyNumber", "emergencyName", "relation"];
 
   let valid = true;
   if (currentStep === 1) {
@@ -29,7 +41,9 @@ function goNextStep() {
       document.getElementById("part3").classList.remove("hidden");
 
       // 👈 ADDED: Hide instructions image on step 3
-      const instructionImageContainer = document.querySelector(".instruction-image-container");
+      const instructionImageContainer = document.querySelector(
+        ".instruction-image-container",
+      );
       if (instructionImageContainer) {
         instructionImageContainer.style.display = "none";
       }
@@ -38,7 +52,6 @@ function goNextStep() {
     }
   }
 }
-
 
 function goBackStep() {
   if (currentStep === 2) {
@@ -54,7 +67,7 @@ function goBackStep() {
 
 function validateFields(fieldIds) {
   let isValid = true;
-  fieldIds.forEach(id => {
+  fieldIds.forEach((id) => {
     const field = document.getElementById(id);
     if (!field.value.trim()) {
       field.style.border = "2px solid red";
@@ -87,9 +100,7 @@ window.goBackStep = goBackStep;
 window.closeRequiredModal = closeRequiredModal;
 
 function submitPart3() {
-  const part3Fields = [
-    "emergencyNumber", "emergencyName", "relation"
-  ];
+  const part3Fields = ["emergencyNumber", "emergencyName", "relation"];
 
   const valid = validateFields(part3Fields);
 
@@ -111,7 +122,5 @@ function closeSubmitModal() {
   modal.style.display = "none";
 }
 
-
 window.submitPart3 = submitPart3;
 window.showSubmitModal = showSubmitModal;
-

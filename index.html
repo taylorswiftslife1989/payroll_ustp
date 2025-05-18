@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -106,7 +106,7 @@
             showPopup(
               "Login Successful!",
               "You will be redirected shortly...",
-              "success"
+              "success",
             );
             setTimeout(() => {
               window.location.href = "dashboard.html";
@@ -117,13 +117,13 @@
               showPopup(
                 "Email Not Found",
                 "The email address is not registered.",
-                "error"
+                "error",
               );
             } else {
               showPopup(
                 "Error",
                 "Invalid email or password. If error persists, please contact support.",
-                "error"
+                "error",
               );
             }
           });

@@ -76,7 +76,7 @@ export function getQuote() {
 
   localStorage.setItem(
     "dailyQuote",
-    JSON.stringify({ date: today, quote: newQuote })
+    JSON.stringify({ date: today, quote: newQuote }),
   );
 
   return newQuote;

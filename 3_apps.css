@@ -243,7 +243,9 @@ body {
   align-items: center;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: left 0.3s ease, transform 0.3s ease;
+  transition:
+    left 0.3s ease,
+    transform 0.3s ease;
   z-index: 1100;
 }
 
@@ -376,7 +378,9 @@ body {
 .animate-on-load {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 /* Add this class after page load */

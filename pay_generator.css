@@ -1,378 +1,381 @@
 /* GENERAL STYLES */
 body {
-    margin: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: url("./assets/new.png") no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-  }
-  
-  /* Container for the back button */
-  .back-button-container {
-    position: fixed;
-    display: inline-block;
-    top: 23px; /* Adjust as needed */
-    left: 153px; /* Adjust as needed */
-    border-radius: 5px;
-    cursor: pointer; /* Makes it clickable */
-    transition: transform 0.3s ease; /* Smooth scaling transition */
-  }
-  
-  /* Styling for the back button icon */
-  .back-button {
-    border-radius: 10px;
-    width: 60px; /* Adjust to your preferred size */
-    height: 60px; /* Adjust to your preferred size */
-  }
-  
-  /* Animated scaling effect */
-  .back-button-container:hover {
-    transform: scale(1.1); /* Scale on hover */
-  }
-  
-  .dashboard-title-bar {
-    background-color: #251f52;
-    display: inline-flex;
-    position: fixed;
-    align-items: center;
-    padding: 10px 16px;
-    border-radius: 12px;
-    color: white;
-    font-size: 24px;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bold;
-    gap: 10px;
-    margin-top: 20px;
-    margin-left: 215px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .dashboard-icon {
-    width: 45px;
-    height: 45px;
-    background-color: #fbb217;
-    border-radius: 10px;
-  }
-  
-  .dashboard-label {
-    color: white;
-  }
-  /* CLOCK WIDGET */
-  .clock-widget {
-    right: 80px;
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    align-items: center;
-    top: 20px;
-    justify-content: center;
-    background-color: #251f52;
-    padding: 0px 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: white;
-    font-weight: bold;
-    gap: 10px;
-  }
-  
-  #analogClock {
-    width: 45px;
-    height: 45px;
-  }
-  
-  #digitalClock {
-    font-size: 1.5rem;
-  }
-  .clock-widget {
-    height: 31px;
-  }
-  
-  .clock-widget {
-    flex-direction: row;
-    padding: 20px;
-  }
-  
-  #dateDisplay {
-    font-size: 14px;
-    color: #333; /* Adjust color as needed */
-    margin-top: 5px;
-    font-family: Arial, sans-serif;
-  }
-  /* MAIN WRAPPER LAYOUT FOR ALL WIDGETS */
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: url("./assets/new.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Container for the back button */
+.back-button-container {
+  position: fixed;
+  display: inline-block;
+  top: 23px; /* Adjust as needed */
+  left: 153px; /* Adjust as needed */
+  border-radius: 5px;
+  cursor: pointer; /* Makes it clickable */
+  transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+/* Styling for the back button icon */
+.back-button {
+  border-radius: 10px;
+  width: 60px; /* Adjust to your preferred size */
+  height: 60px; /* Adjust to your preferred size */
+}
+
+/* Animated scaling effect */
+.back-button-container:hover {
+  transform: scale(1.1); /* Scale on hover */
+}
+
+.dashboard-title-bar {
+  background-color: #251f52;
+  display: inline-flex;
+  position: fixed;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: white;
+  font-size: 24px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 215px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-icon {
+  width: 45px;
+  height: 45px;
+  background-color: #fbb217;
+  border-radius: 10px;
+}
+
+.dashboard-label {
+  color: white;
+}
+/* CLOCK WIDGET */
+.clock-widget {
+  right: 80px;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  align-items: center;
+  top: 20px;
+  justify-content: center;
+  background-color: #251f52;
+  padding: 0px 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: white;
+  font-weight: bold;
+  gap: 10px;
+}
+
+#analogClock {
+  width: 45px;
+  height: 45px;
+}
+
+#digitalClock {
+  font-size: 1.5rem;
+}
+.clock-widget {
+  height: 31px;
+}
+
+.clock-widget {
+  flex-direction: row;
+  padding: 20px;
+}
+
+#dateDisplay {
+  font-size: 14px;
+  color: #333; /* Adjust color as needed */
+  margin-top: 5px;
+  font-family: Arial, sans-serif;
+}
+/* MAIN WRAPPER LAYOUT FOR ALL WIDGETS */
+.main-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 100px;
+}
+
+.main-layout {
+  margin-left: -200px;
+}
+
+/* D A T A  E N T R Y*/
+.entry-container {
+  display: flex;
+  position: fixed;
+  width: 1300px;
+  height: 550px;
+  background-color: #251f52;
+  margin-top: 100px;
+  margin-left: 156px;
+  border-radius: 20px; /* optional, but adds glow-up vibes */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* optional for that depth */
+}
+
+/* S I D E  B A R */
+.sidebar {
+  position: fixed;
+  top: 20px;
+  left: 40px; /* Adjusted by -40px */
+  border-radius: 15px;
+  width: 250px;
+  height: 92vh;
+  background-color: #251f52;
+  border-right: 1px solid #ddd;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  padding-top: 0px;
+}
+
+/* When sidebar is closed */
+.sidebar.closed {
+  width: 70px;
+}
+
+.sidebar.closed #systemTitle {
+  display: none;
+}
+
+#systemTitle {
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.closed #systemTitle {
+  opacity: 0;
+}
+
+.separator {
+  height: 3px;
+  background-color: white;
+  margin: 10px 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2px;
+}
+
+/* General Styles for Logo */
+.logo-container {
+  background-color: white;
+  padding: 17px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto; /* Centers it horizontally */
+  margin-left: 25px;
+  width: 20px; /* Adjust width for a fixed logo container */
+  height: 20px; /* Adjust height to make the logo fit */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Make sure it's not moved */
+  transition: transform 0.3s ease;
+}
+
+/* Logo Image Styling */
+.logo-container img {
+  width: 50px; /* Adjust to the desired logo size */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  transition: none; /* Disable image movement or scaling */
+}
+
+/* System Title (Text under the logo) */
+.system-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+  margin-top: 0px;
+  line-height: 1.4;
+  position: absolute; /* Fix the text position under the logo */
+  left: 117px;
+  transform: translateX(-50%); /* Perfect centering */
+  transition: none; /* Ensure no transitions affect this */
+}
+
+/* Sidebar Open/Closed States */
+.sidebar.closed .logo-container {
+  width: 20px; /* Adjust width for the closed sidebar state */
+  height: 20px; /* Adjust height for the closed sidebar state */
+  margin-left: 9px;
+}
+
+.sidebar.closed .logo-container img {
+  width: 50px; /* Smaller logo when sidebar is closed */
+}
+
+/* Toggle Button Adjustment */
+.toggle-btn {
+  position: fixed;
+  top: 50px;
+  left: 300px; /* Adjusted the left position here for the button */
+  background-color: #fbb217;
+  border-radius: 50%;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    left 0.3s ease,
+    transform 0.3s ease;
+  z-index: 1100;
+}
+
+/* When sidebar is closed */
+.sidebar.closed .toggle-btn {
+  transform: translateX(-185px); /* Adjusted to match the new position */
+}
+
+/* Rotate the arrow when sidebar is closed */
+.sidebar.closed .toggle-btn img {
+  transition: transform 0.3s ease; /* Ensure smooth rotation */
+}
+
+/* Hover effect for the toggle button */
+.toggle-btn:hover {
+  transform: scale(1.05);
+}
+
+.toggle-btn img {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease; /* Smooth transition for image rotation */
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 0px;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  color: #fbb217;
+  transition: background-color 0.2s ease;
+}
+
+.menu li:hover {
+  background-color: #5b61a1;
+  border-radius: 10px;
+}
+
+.menu img {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  transition: margin 0.3s;
+}
+
+.menu-text {
+  font-size: 14px;
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.closed .menu-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.closed .menu img {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 1024px) {
   .main-layout {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: row; /* <--- changed this */
+    flex-wrap: wrap; /* optional: wrap items to next line */
     justify-content: center;
-    gap: 15px;
-    padding-top: 100px;
+    gap: 20px;
+    padding-top: 60px;
   }
-  
-  .main-layout {
-    margin-left: -200px;
-  }
-  
-  /* D A T A  E N T R Y*/
-  .entry-container {
-    display: flex;
-    position: fixed;
-    width: 1300px;
-    height: 550px;
-    background-color: #251f52;
-    margin-top: 100px;
-    margin-left: 156px;
-    border-radius: 20px; /* optional, but adds glow-up vibes */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* optional for that depth */
-  }
-  
-  /* S I D E  B A R */
-  .sidebar {
-    position: fixed;
-    top: 20px;
-    left: 40px; /* Adjusted by -40px */
-    border-radius: 15px;
-    width: 250px;
-    height: 92vh;
-    background-color: #251f52;
-    border-right: 1px solid #ddd;
-    transition: width 0.3s ease;
-    overflow-x: hidden;
-    z-index: 1000;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-    padding-top: 0px;
-  }
-  
-  /* When sidebar is closed */
-  .sidebar.closed {
-    width: 70px;
-  }
-  
-  .sidebar.closed #systemTitle {
-    display: none;
-  }
-  
-  #systemTitle {
-    transition: opacity 0.3s ease;
-  }
-  
-  .sidebar.closed #systemTitle {
-    opacity: 0;
-  }
-  
-  .separator {
-    height: 3px;
-    background-color: white;
-    margin: 10px 0;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 2px;
-  }
-  
-  /* General Styles for Logo */
-  .logo-container {
-    background-color: white;
-    padding: 17px;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto; /* Centers it horizontally */
-    margin-left: 25px;
-    width: 20px; /* Adjust width for a fixed logo container */
-    height: 20px; /* Adjust height to make the logo fit */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative; /* Make sure it's not moved */
-    transition: transform 0.3s ease;
-  }
-  
-  /* Logo Image Styling */
-  .logo-container img {
-    width: 50px; /* Adjust to the desired logo size */
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-    transition: none; /* Disable image movement or scaling */
-  }
-  
-  /* System Title (Text under the logo) */
-  .system-title {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    text-align: left;
-    margin-top: 0px;
-    line-height: 1.4;
-    position: absolute; /* Fix the text position under the logo */
-    left: 117px;
-    transform: translateX(-50%); /* Perfect centering */
-    transition: none; /* Ensure no transitions affect this */
-  }
-  
-  /* Sidebar Open/Closed States */
-  .sidebar.closed .logo-container {
-    width: 20px; /* Adjust width for the closed sidebar state */
-    height: 20px; /* Adjust height for the closed sidebar state */
-    margin-left: 9px;
-  }
-  
-  .sidebar.closed .logo-container img {
-    width: 50px; /* Smaller logo when sidebar is closed */
-  }
-  
-  /* Toggle Button Adjustment */
-  .toggle-btn {
-    position: fixed;
-    top: 50px;
-    left: 300px; /* Adjusted the left position here for the button */
-    background-color: #fbb217;
-    border-radius: 50%;
-    padding: 10px;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease, transform 0.3s ease;
-    z-index: 1100;
-  }
-  
-  /* When sidebar is closed */
-  .sidebar.closed .toggle-btn {
-    transform: translateX(-185px); /* Adjusted to match the new position */
-  }
-  
-  /* Rotate the arrow when sidebar is closed */
-  .sidebar.closed .toggle-btn img {
-    transition: transform 0.3s ease; /* Ensure smooth rotation */
-  }
-  
-  /* Hover effect for the toggle button */
-  .toggle-btn:hover {
-    transform: scale(1.05);
-  }
-  
-  .toggle-btn img {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.3s ease; /* Smooth transition for image rotation */
-  }
-  
-  .menu {
-    list-style: none;
-    padding: 0;
-    margin-top: 0px;
-  }
-  
-  .menu li {
-    display: flex;
-    align-items: center;
-    padding: 15px 20px;
-    cursor: pointer;
-    color: #fbb217;
-    transition: background-color 0.2s ease;
-  }
-  
-  .menu li:hover {
-    background-color: #5b61a1;
-    border-radius: 10px;
-  }
-  
-  .menu img {
-    width: 30px;
-    height: 30px;
-    margin-right: 15px;
-    transition: margin 0.3s;
-  }
-  
-  .menu-text {
-    font-size: 14px;
-    color: white;
-    font-style: italic;
-    font-weight: bold;
-    white-space: nowrap;
-    transition: opacity 0.3s ease;
-  }
-  
-  .sidebar.closed .menu-text {
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  .sidebar.closed .menu img {
-    margin-right: 0;
-  }
-  
-  @media screen and (max-width: 1024px) {
-    .main-layout {
-      flex-direction: row; /* <--- changed this */
-      flex-wrap: wrap; /* optional: wrap items to next line */
-      justify-content: center;
-      gap: 20px;
-      padding-top: 60px;
-    }
-  }
-  
-  /* Overlay for the sidebar */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* 40% dim */
-    z-index: 900;
-    pointer-events: auto;
-  }
-  
-  .overlay.hidden {
-    display: none;
-  }
-  
-  .body-disabled .main-layout,
-  .body-disabled .user-info,
-  .body-disabled .right-widgets,
-  .body-disabled .daily-quote-widget,
-  .body-disabled .elfsight-app-41c2b06f-7363-4cd3-aee5-c06bc40cb548 {
-    pointer-events: none;
-    user-select: none;
-  }
-  
-  /* Highlight Icons and Text Section */
-  .menu li.active {
-    background-color: #fbb217; /* soft highlight background */
-    border-radius: 10px;
-  }
-  
-  .menu li.active .menu-text {
-    font-weight: bold;
-  }
-  
-  /* Animation keyframes */
-  @keyframes fadeInSlideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Initial hidden state */
-  .animate-on-load {
+}
+
+/* Overlay for the sidebar */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* 40% dim */
+  z-index: 900;
+  pointer-events: auto;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.body-disabled .main-layout,
+.body-disabled .user-info,
+.body-disabled .right-widgets,
+.body-disabled .daily-quote-widget,
+.body-disabled .elfsight-app-41c2b06f-7363-4cd3-aee5-c06bc40cb548 {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Highlight Icons and Text Section */
+.menu li.active {
+  background-color: #fbb217; /* soft highlight background */
+  border-radius: 10px;
+}
+
+.menu li.active .menu-text {
+  font-weight: bold;
+}
+
+/* Animation keyframes */
+@keyframes fadeInSlideUp {
+  0% {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
   }
-  
-  /* Add this class after page load */
-  .animate-on-load.visible {
-    animation: fadeInSlideUp 0.6s ease forwards;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+}
+
+/* Initial hidden state */
+.animate-on-load {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+/* Add this class after page load */
+.animate-on-load.visible {
+  animation: fadeInSlideUp 0.6s ease forwards;
+}

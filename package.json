@@ -1,0 +1,15 @@
+{
+  "name": "payroll_ustp",
+  "version": "1.0.0",
+  "main": "animate_widget.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}
